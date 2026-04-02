@@ -11,6 +11,8 @@ Hidden Band Info は、Pixel8・9・10シリーズやMediaTekを使った機種�
 1.  **Shizuku のインストールと起動**
     - Google Play ストア等から [Shizuku](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api) をインストールします。
     - 「ワイヤレスデバッグ」等を使用して Shizuku サービスを開始してください。
+    - ※ここのfork版がワイヤレスでバックの永続化が出来て便利でした https://github.com/thedjchi/Shizuku 
+    　（ただしセキュリティは落ちます）      
     
 2.  **本アプリのインストール**
     - 配布された APK ファイルをインストールします。
@@ -28,16 +30,21 @@ Hidden Band Info は、Pixel8・9・10シリーズやMediaTekを使った機種�
 ### 1. メイン画面 (Home)
 アプリを起動すると最初に表示される画面です。
 
+   <img height="400" alt="image" src="https://github.com/user-attachments/assets/83c8bfba-635f-420b-91ab-16102785452c" />
+   <img height="400" alt="image" src="https://github.com/user-attachments/assets/6e4891ea-96c7-48f0-b4fb-c9db234c77e8" />
+    
 - **バンド情報表示**: 接続中のスロットごとに、キャリア名（PLMN）、バンド番号、周波数（ARFCN）、PCI、電波強度（RSRP/RSRQ/SINR）を表示します。
 - **タイムライン・シークバー (画面上部)**: 記録中のデータの進捗を表示します。スライダーを動かすことで、過去の接続状況をリアルタイムに振り返ることができます。
 - **アクションボタン**:
     - **PIP**: 小窓表示（ピクチャー・イン・ピクチャー）に切り替えます。
-    - **録画 (REC)**: ローカルデータベースへの記録を開始/停止します。(Startしなくても記録がされている問題あり
-    - **エクスポート (Export)**: 記録したデータを CSV 形式で保存します。（Start前の全データが出力される問題あり
-    - **設定 (Settings)**: アプリの動作設定を開きます。
+    - **録画 (REC)**: ローカルデータベースへの記録を開始/停止します。(停止時に自動でCSVファイルが出力されます）
+    - **エクスポート (Export)**: 記録したデータを CSV 形式で保存します。
+    - **設定 (Settings)**: アプリの動作設定を開きます。  
 
 ### 2. CSV 再生画面 (CSV Playback)
 エクスポートした CSV ファイルや、過去のログを読み込んで閲覧する画面です。
+<img height="500" alt="image" src="https://github.com/user-attachments/assets/c3690445-5a49-45ee-9253-6dcc9473fda8" />
+
 
 - **テーブル表示**: 記録されたデータをリスト形式で表示します。
 - **カラム選択**: 表示したい項目（CellID, PLMN, SINR など）を自由に選択して絞り込むことができます。
@@ -57,7 +64,6 @@ Hidden Band Info は、Pixel8・9・10シリーズやMediaTekを使った機種�
 
 監視検知すると、通知と検知履歴画面への出力が行われます。
 （まだ動作不安定）
-
 ---
 
 ## 🛠 技術的な制限事項
@@ -80,6 +86,9 @@ Hidden Band Info は、Pixel8・9・10シリーズやMediaTekを使った機種�
 - ~~電界強度を推測値扱いでもPIPで表示~~ ※v1.4で実装。
 - メインの画面以外でアプリ最小化した時に、PIPがその画面になる不具合は修正予定
 - スムーズじゃないスクロールバー問題
+- CSV履歴表示の際の過去ログ検索機能
+
+## リリースノートは、
   
 ---
 ## 📝 免責事項・クレジット
